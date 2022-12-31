@@ -37,5 +37,7 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<scm>
+		<developerConnection>scm:git:git@github.com:shubham-sanvariya/Pet-Clinic.git</developerConnection>
+	</scm>
 </project>
