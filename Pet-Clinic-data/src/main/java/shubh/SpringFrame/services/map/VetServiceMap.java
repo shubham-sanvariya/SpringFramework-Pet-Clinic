@@ -1,12 +1,11 @@
 package shubh.SpringFrame.services.map;
 
-import shubh.SpringFrame.model.Owner;
 import shubh.SpringFrame.model.Vet;
-import shubh.SpringFrame.services.CrudService;
+import shubh.SpringFrame.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
