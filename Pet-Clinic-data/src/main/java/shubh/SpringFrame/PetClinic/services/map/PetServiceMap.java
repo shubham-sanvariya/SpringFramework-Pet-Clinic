@@ -1,10 +1,12 @@
-package shubh.SpringFrame.services.map;
+package shubh.SpringFrame.PetClinic.services.map;
 
-import shubh.SpringFrame.model.Pet;
-import shubh.SpringFrame.services.PetService;
+import org.springframework.stereotype.Service;
+import shubh.SpringFrame.PetClinic.model.Pet;
+import shubh.SpringFrame.PetClinic.services.PetService;
 
 import java.util.Set;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override

@@ -1,10 +1,12 @@
-package shubh.SpringFrame.services.map;
+package shubh.SpringFrame.PetClinic.services.map;
 
-import shubh.SpringFrame.model.Owner;
-import shubh.SpringFrame.services.OwnerService;
+import org.springframework.stereotype.Service;
+import shubh.SpringFrame.PetClinic.model.Owner;
+import shubh.SpringFrame.PetClinic.services.OwnerService;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
