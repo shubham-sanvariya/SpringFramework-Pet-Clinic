@@ -1,4 +1,4 @@
-package shubh.SpringFrame.model;
+package shubh.SpringFrame.PetClinic.model;
 
 public class Person extends BaseEntity{
     private String firstName;

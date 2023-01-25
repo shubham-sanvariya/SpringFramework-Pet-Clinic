@@ -1,4 +1,4 @@
-package shubh.SpringFrame.services;
+package shubh.SpringFrame.PetClinic.services;
 
 
 import java.util.Set;

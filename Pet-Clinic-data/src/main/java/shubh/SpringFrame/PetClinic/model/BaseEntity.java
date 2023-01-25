@@ -1,4 +1,4 @@
-package shubh.SpringFrame.model;
+package shubh.SpringFrame.PetClinic.model;
 
 import java.io.Serializable;
 

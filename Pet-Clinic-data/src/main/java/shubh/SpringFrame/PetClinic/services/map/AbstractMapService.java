@@ -1,4 +1,4 @@
-package shubh.SpringFrame.services.map;
+package shubh.SpringFrame.PetClinic.services.map;
 
 import java.util.HashMap;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package shubh.SpringFrame;
+package shubh.SpringFrame.PetClinic;
 
 /**
  * Hello world!
