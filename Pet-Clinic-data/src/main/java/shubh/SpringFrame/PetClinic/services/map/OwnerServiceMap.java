@@ -2,12 +2,24 @@ package shubh.SpringFrame.PetClinic.services.map;
 
 import org.springframework.stereotype.Service;
 import shubh.SpringFrame.PetClinic.model.Owner;
+import shubh.SpringFrame.PetClinic.model.Pet;
 import shubh.SpringFrame.PetClinic.services.OwnerService;
+import shubh.SpringFrame.PetClinic.services.PetService;
+import shubh.SpringFrame.PetClinic.services.PetTypeService;
 
 import java.util.Set;
 
 @Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+
+    private PetTypeService petTypeService;
+    private PetService petService;
+
+    public OwnerServiceMap(PetTypeService petTypeService, PetService petService) {
+        this.petTypeService = petTypeService;
+        this.petService = petService;
+    }
+
     @Override
     public Set<Owner> findAll() {
         return super.findAll();
@@ -20,7 +32,27 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner save(Owner object) {
-        return super.save(object);
+
+        if (object != null){
+            if (object.getPets() != null) {
+                object.getPets().forEach(pet -> {
+                    if (pet.getPetType() != null){
+                        if (pet.getPetType().getId() == null){
+                            pet.setPetType(petTypeService.save(pet.getPetType()));
+                        }
+                    } else {
+                        throw new RuntimeException("Pet Type is required");
+                    }
+                    if (pet.getId() == null){
+                        Pet savedPet = petService.save(pet);
+                        pet.setId(savedPet.getId());
+                    }
+                });
+            }
+            return super.save(object);
+        } else {
+            return null;
+        }
     }
 
     @Override
