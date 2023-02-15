@@ -2,12 +2,13 @@ package shubh.SpringFrame.PetClinic.services.map;
 
 import org.springframework.stereotype.Service;
 import shubh.SpringFrame.PetClinic.model.Speciality;
-import shubh.SpringFrame.PetClinic.services.SpecialtiesService;
+import shubh.SpringFrame.PetClinic.services.SpecialityService;
 
 import java.util.Set;
 
 @Service
-public class SpecialtiesMapService extends AbstractMapService<Speciality, Long> implements SpecialtiesService {
+public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialityService {
+
     @Override
     public Set<Speciality> findAll() {
         return super.findAll();
