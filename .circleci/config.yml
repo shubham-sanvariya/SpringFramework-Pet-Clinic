@@ -70,21 +70,21 @@ jobs:
 #    jobs:
 #      - say-hello
 
-version: 2.1
-
-orbs:
-  maven: circleci/maven@1.2.0
-
-jobs:
-  build:
-    executor: maven/default
-    steps:
-      - checkout
-      - run: mvn clean install -DskipTests=true
-
-workflows:
-  version: 2
-  build:
-    jobs:
-      - build
+#version: 2.1
+#
+#orbs:
+#  maven: circleci/maven@1.2.0
+#
+#jobs:
+#  build:
+#    executor: maven/default
+#    steps:
+#      - checkout
+#      - run: mvn clean install -DskipTests=true
+#
+#workflows:
+#  version: 2
+#  build:
+#    jobs:
+#      - build
 
