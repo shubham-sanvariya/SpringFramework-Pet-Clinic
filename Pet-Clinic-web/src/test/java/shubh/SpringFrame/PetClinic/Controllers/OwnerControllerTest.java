@@ -14,7 +14,6 @@ import shubh.SpringFrame.PetClinic.services.OwnerService;
 import java.util.HashSet;
 import java.util.Set;
 
-
 import static org.hamcrest.Matchers.*;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.verifyNoInteractions;
@@ -38,8 +37,8 @@ class OwnerControllerTest {
     @BeforeEach
     void setUp() {
         owners = new HashSet<>();
-        owners.add(Owner.builder().id(1l).build());
-        owners.add(Owner.builder().id(2l).build());
+        owners.add(Owner.builder().id(Long.valueOf(1l)).build());
+        owners.add(Owner.builder().id(Long.valueOf(2l)).build());
 
         mockMvc = MockMvcBuilders
                 .standaloneSetup(ownerController)
@@ -76,7 +75,7 @@ class OwnerControllerTest {
 
     @Test
     void displayOwner() throws Exception {
-        when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(1l).build());
+        when(ownerService.findById(Long.valueOf(anyLong()))).thenReturn(Owner.builder().id(Long.valueOf(1l)).build());
 
         mockMvc.perform(get("/owners/123"))
                 .andExpect(status().isOk())
