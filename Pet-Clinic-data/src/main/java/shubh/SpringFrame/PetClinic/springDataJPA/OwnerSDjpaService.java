@@ -9,6 +9,7 @@ import shubh.SpringFrame.PetClinic.repositories.PetTypeRepository;
 import shubh.SpringFrame.PetClinic.services.OwnerService;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -30,6 +31,12 @@ public class OwnerSDjpaService implements OwnerService {
     public Owner findByLastName(String lastName) {
         return ownerRepository.findByLastName(lastName);
     }
+
+    @Override
+    public List<Owner> findByLastNameLike(String lastName) {
+        return ownerRepository.findByLastNameLike(lastName);
+    }
+
     @Override
     public Set<Owner> findAll() {
         Set<Owner> owners = new HashSet<>();
