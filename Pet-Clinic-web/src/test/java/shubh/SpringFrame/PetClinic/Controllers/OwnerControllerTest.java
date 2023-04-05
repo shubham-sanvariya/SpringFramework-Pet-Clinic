@@ -59,7 +59,7 @@ class OwnerControllerTest {
 
     @Test
     void processFindFormReturnMany() throws Exception {
-        when(ownerService.findByLastNameLike(anyString()))
+        when(ownerService.findAllByLastNameLike(anyString()))
                 .thenReturn(Arrays.asList(Owner.builder().id(1l).build(),
                     Owner.builder().id(2l).build()));
 
@@ -71,7 +71,7 @@ class OwnerControllerTest {
 
     @Test
     void processFindFormReturnOne() throws Exception {
-        when(ownerService.findByLastNameLike(anyString())).
+        when(ownerService.findAllByLastNameLike(anyString())).
                 thenReturn(Arrays.asList(Owner.builder().id(1l).build()));
 
         mockMvc.perform(get("/owners"))
