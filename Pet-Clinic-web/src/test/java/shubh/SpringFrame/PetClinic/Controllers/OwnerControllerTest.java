@@ -117,7 +117,8 @@ class OwnerControllerTest {
 
         mockMvc.perform(get("/owners/1/edit"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("owners/createOrUpdateOwnerForm"));
+                .andExpect(view().name("owners/createOrUpdateOwnerForm"))
+                .andExpect(model().attributeExists("owner"));
 
         verify(ownerService).findById(anyLong());
     }
